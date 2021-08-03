@@ -11,15 +11,15 @@ public class MoodAnalyzer {
         super();
     }
     //Check mood analyzer method
-    public String analyzeMood(String message) {
+    public String analyzeMood(String message) throws MoodAnalyzerException {
         try{
             if (message.contains("sad")) {
                 return "SAD";
             } else {
                 return "HAPPY";
             }
-        } catch(NullPointerException exception){
-            return "HAPPY";
+        } catch(NullPointerException e){
+            throw new MoodAnalyzerException("Please enter a valid message!");
         }
     }
     //Generated main method displaying welcome message
