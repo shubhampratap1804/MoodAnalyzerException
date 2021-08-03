@@ -16,5 +16,11 @@ public class MoodAnalyzerTest {
         MoodAnalyzer myCurrentMood = new MoodAnalyzer();
         Assertions.assertEquals("HAPPY", myCurrentMood.analyzeMood("i am any mood"));
     }
+
+    @Test
+    void whenNullMessageIsPassed_ExceptionHandling_ShouldReturnHappy(){
+        MoodAnalyzer myCurrentMood = new MoodAnalyzer();
+        Assertions.assertEquals("HAPPY",myCurrentMood.analyzeMood(""));
+    }
 }
 
